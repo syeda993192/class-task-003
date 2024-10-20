@@ -126,6 +126,23 @@ function checkAnswer(choice) {
   }
 }
 
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    loadQuestion();
+  } else {
+    endGame();
+  }
+});
+
+function endGame() {
+  questionElement.textContent = 'Quiz Complete!';
+  messageElement.textContent = `Your final score is: ${score}`;
+  nextButton.textContent = 'Play Again';
+  nextButton.addEventListener('click', () => {
+    resetGame();
+  });
+}
    </script>
 </body>
 </html>
