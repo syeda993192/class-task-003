@@ -143,6 +143,16 @@ function endGame() {
     resetGame();
   });
 }
+function resetGame() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.textContent = 'Next Question';
+  scoreElement.textContent = `Score: ${score}`;
+  loadQuestion();
+}
+
+// Start the quiz
+loadQuestion();
    </script>
 </body>
 </html>
