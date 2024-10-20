@@ -74,7 +74,27 @@
     ],
     correct: 1
   }
-]
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+const questionElement = document.getElementById('question');
+const choicesElements = document.querySelectorAll('.answer');
+const messageElement = document.getElementById('message');
+const nextButton = document.getElementById('next-btn');
+const scoreElement = document.getElementById('score');
+
+function loadQuestion() {
+  const currentQuestion = questions[currentQuestionIndex];
+  questionElement.textContent = currentQuestion.question;
+  choicesElements.forEach((button, index) => {
+    button.textContent = currentQuestion.choices[index];
+  });
+  messageElement.textContent = '';
+}
+
+
    </script>
 </body>
 </html>
