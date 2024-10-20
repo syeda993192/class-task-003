@@ -15,4 +15,21 @@ body {
     text-align: center;
     width: 300px;
   }
+  h1 {
+    color: #333;
+  }
   
+  .choices {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .answer {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
