@@ -93,7 +93,21 @@ function loadQuestion() {
   });
   messageElement.textContent = '';
 }
+choicesElements.forEach(button => {
+  button.addEventListener('click', (e) => {
+    const choice = parseInt(e.target.getAttribute('data-choice'));
+    checkAnswer(choice);
+  });
 
+  // Mouseover hover effect
+  button.addEventListener('mouseover', () => {
+    button.style.backgroundColor = '#333';
+  });
+  
+  button.addEventListener('mouseout', () => {
+    button.style.backgroundColor = '#4CAF50';
+  });
+});
 
    </script>
 </body>
