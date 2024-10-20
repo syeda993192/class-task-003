@@ -108,6 +108,23 @@ choicesElements.forEach(button => {
     button.style.backgroundColor = '#4CAF50';
   });
 });
+// Handle key-down for keyboard interaction
+document.addEventListener('keydown', (e) => {
+  const key = e.key;
+  if (key >= '1' && key <= '4') {
+    checkAnswer(parseInt(key));
+  }
+});
+
+function checkAnswer(choice) {
+  if (choice === questions[currentQuestionIndex].correct) {
+    messageElement.textContent = 'Correct!';
+    score++;
+    scoreElement.textContent = `Score: ${score}`;
+  } else {
+    messageElement.textContent = 'Try Again!';
+  }
+}
 
    </script>
 </body>
